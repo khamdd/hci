@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class TripCard extends StatelessWidget {
   final String destination, time, date, group;
@@ -14,13 +15,26 @@ class TripCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 64,
+      height: 90,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Text(destination),
-          Text(time + date),
-          Text(group),
+          Container(
+            height: 80,
+            width: double.infinity,
+            color: Colors.grey,
+            child: Column(
+              children: [
+                Text(destination),
+                Text(time +' '+ date),
+                Text(group),
+              ],
+            )
+
+          )
         ],
+
+
       ),
     );
   }
